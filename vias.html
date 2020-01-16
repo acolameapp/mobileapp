@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1HWW28TDBK"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-1HWW28TDBK');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>acola.me Ecuador | Consulta multas, comparte viajes o revisa el estado de las vías. Comparte tu viaje en acola.me</title>
+    <meta property="og:site_name" content="acola.me app" />
+    <meta property="og:image" content="https://acola.me/images/logo-01.png" />
+	<meta property="og:title" content="acola.me Ecuador | Comparte tus viajes. Consulta multas o revisa el estado de la vías." />
+	<meta property="og:description" content="acola.me Ecuador | Consulta tus obligaciones con la ANT, revisa el estado de las vías. Acola a tus amigos, consigue copiloto o reúne dinero para el combustible. Comparte tu viaje en acola.me"/>
+	<meta name="description" content="acola.me Ecuador | Consulta tus obligaciones con la ANT, revisa el estado de las vías. Acola a tus amigos, consigue copiloto o reúne dinero para el combustible. Comparte tu viaje en acola.me"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/date-fa.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <meta name="theme-color" content="#043941">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css"> -->
+
+    <!-- fallback for no js -->
+    <noscript>
+        <style>
+            [data-simplebar] {
+                overflow: auto;
+            }
+            [data-aos] {
+                opacity: 1 !important;
+                transform: translate(0) scale(1) !important;
+            }
+            #preloader {
+                display: none;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <div class="st-hover"></div>
+    <div class="sticky-social">
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https%3A%2F%2Facola.me%2F&display=popup&ref=plugin&src=share_button">
+            <div class="st-wrapper">
+                <div class="st-fb">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                </div>
+                <div class="st-share">Compartir</div>
+            </div>
+        </a>
+        <div class="st-arrow">
+            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div id="preloader">
+        <div class="sbl-circ-dual"></div>
+    </div> 
+    <div class="root mobile m2">
+        <!--Start of hero and navigation section-->
+        <section class="heronav shared-hero">
+            <div class="main-header">
+                <div class="center-header">
+                    <a href="/index.html">
+                        <img src="images/logo.svg" alt="logo">
+                        <h1>acola.me</h1>
+                    </a>
+                    <div id="nav-icon3">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="/index.html">Inicio</a></li>
+                            <li><a href="/sharedride.html">Compartir viajes</a></li>
+                            <li><a class="current-menu-item" href="/vias.html">Estado de las vías</a></li>
+                            <li><a href="/ant.html">Consultas ANT</a></li>
+                            <li><a href="/acercade.html">Acerca De</a></li>
+                            <li><a href="/contact.html">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>    
+            </div>
+            <div class="hero">
+                
+            </div>
+
+        </section>
+        <!--End of hero and navigation section-->
+
+        <!-- Start of roads table section -->
+        <section class="table-section" id="tablelist">
+            <h1 class="section-h1">Vigila el estado de las vías <span>en tiempo real!</span></h1>
+            <div class="separator"></div>
+            <h2 class="section-h2">Nuestra base de datos está conectada directamente con el ECU 911</h2>
+            <div id="search-cont">
+                <input class="search" placeholder="Buscar por Provincia" /><i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            <div class="thead">
+                <div class="tname">Provincia</div>
+                <div class="troad">Vía</div>
+                <div class="tstate">Estado</div>
+                <div class="tinfo">Descripción</div>
+            </div>
+            <div class="table-container" id="tableVias">
+                
+
+            </div>
+        </section>
+        <!-- End of roads table section -->
+        
+    <footer>
+        <div>
+            
+            <div class="full-width"></div>
+            <p>Copyright © 2020 by ACOLA.ME</p>
+        </div>
+    </footer>
+    </div>
+    <!-- <script src="https://unpkg.com/swiper/js/swiper.min.js"></script> -->
+
+    <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="js/date-simplebar-list.js"></script>
+    <script src="js/custom.js" type="text/javascript"></script>
+    
+    
+    
+    <script>
+
+        const picker = new MaterialDatePicker({})
+            .on('submit', (d) => {
+            output.innerText = d;
+            });
+
+        const el = document.querySelector('.c-datepicker-btn');
+        el.addEventListener('click', () => {
+            picker.open({
+            format: 'dd/MM/YY'
+            });
+        }, false);
+
+    </script>
+    <script>
+        function searchcedula(){
+        var cedula=$("#cedula").val()
+        console.log(cedula);
+        var scrcedula="https://sistemaunico.ant.gob.ec:5038/PortalWEB/paginas/clientes/clp_grid_citaciones.jsp?ps_tipo_identificacion=CED&ps_identificacion="+cedula+"&ps_placa="
+        $("#iframedata").attr('src', scrcedula)
+        }
+        function searchplaca(){
+            var placa=$("#cedula").val()
+            placa=placa.toUpperCase();
+            console.log(placa);
+            var scrplaca="https://sistemaunico.ant.gob.ec:5038/PortalWEB/paginas/clientes/clp_grid_citaciones.jsp?ps_tipo_identificacion=PLA&ps_identificacion="+placa+"&ps_placa="
+            $("#iframedata").attr('src', scrplaca)
+        }
+        refresh();
+        function sendForm(){
+            var name = $('#name').val();
+            var origin = $('#origin-form option:selected').val();
+            var destination = $('#destination-form option:selected').val();
+            var whatsapp = $('#whatsapp').val();
+            var facebook = $('#fb').val();
+            var seats = $('#seats').val();
+            var password = $('#password').val();
+            var date = $('#output').html();
+            var description = $('#description').val();
+            var urlpost=""
+            var ride = $('#ride-type option:selected').val();
+            if(ride==="Conductor"){
+                urlpost="https://zealous-snyder-fe1913.netlify.com/.netlify/functions/index/conductores";
+            }
+            else if(ride==="Pasajero"){
+                urlpost="https://zealous-snyder-fe1913.netlify.com/.netlify/functions/index/pasajeros";
+            }
+            else{
+                janelaPopUp.abre( "aviso", 'p white',  'acola.me' ,  'Seleccione su rol en el viaje (pasajero, conductor)');
+                return;
+            }
+            $.post(urlpost,{
+                name:name,
+                origin:origin,
+                destination:destination,
+                whatsapp:whatsapp,
+                facebook:facebook,
+                seats:seats,
+                password:password,
+                date:date,
+                description:description
+            },
+            function (msg) {
+                console.log(msg)
+                if(msg==="ok"){
+                    // alert("Su post ha sido enviado con éxito");
+                    janelaPopUp.abre( "aviso", 'p white',  'acola.me' ,  'Su post ha sido enviado con exito!');
+                    refresh();
+                    document.getElementById('posts-form').reset();
+                    location.hash = "#" + "app";
+                }
+                else{
+                    // alert("Por favor llene todos los datos y verifique que sean correctos");
+                    janelaPopUp.abre( "aviso", 'p white',  'acola.me' ,  'Por favor llene todos los datos y verifique que sean correctos');
+                }
+            });  
+            
+        }
+
+        function deleteConductores(uri){
+            janelaPopUp.prompt( "aviso", 'p white',  'acola.me' ,  'Ingrese la clave para borrar el post',"","","","Enviar",uri);
+        }
+
+        function deletePasajeros(uri){
+            janelaPopUp.prompt( "aviso", 'p white',  'acola.me' ,  'Ingrese la clave para borrar el post',"","","","Enviar",uri);
+        }
+
+        function deleteConductoresFunc(uri){
+            key=$("#pass").val();
+            if (key == null || key == "") {}
+            else{
+                $.post("https://zealous-snyder-fe1913.netlify.com/.netlify/functions/index/deleteConductores",{
+                uri:uri,
+                key:key
+                },
+                function (msg) {
+                    if(msg==="ok"){
+                        // alert("Su post se ha eliminado con éxito")
+                        setTimeout(function() {
+                            janelaPopUp.abre( "aviso", 'p white',  'acola.me' ,  'Su post se ha eliminado exitosamente');
+                            refresh();
+                        },1000);
+                    }
+                    else{
+                    // alert("Clave incorrecta")
+                        setTimeout(function() {
+                            janelaPopUp.abre( "aviso", 'p white',  'acola.me' ,  'Clave incorrecta!');
+                            refresh();
+                        },1000);
+                    }
+                });     
+            }
+            if (key == null || key == "") {}
+            else{
+                $.post("https://zealous-snyder-fe1913.netlify.com/.netlify/functions/index/deletePasajeros",{
+                uri:uri,
+                key:key
+                },
+                function (msg) {
+                    if(msg==="ok"){
+                        // alert("Su post se ha eliminado con éxito")
+                        setTimeout(function() {
+                            janelaPopUp.abre( "aviso", 'p white',  'acola.me' ,  'Su post se ha eliminado exitosamente');
+                            refresh();
+                        },1000);
+                    }
+                    else{
+                    // alert("Clave incorrecta")
+                        setTimeout(function() {
+                            janelaPopUp.abre( "aviso", 'p white',  'acola.me' ,  'Clave incorrecta!');
+                            refresh();
+                        },1000);
+                    }
+                });     
+            }
+        }
+
+        function refresh(){
+            $("i.fa-refresh").toggleClass("fa-spin");
+            $.get("https://zealous-snyder-fe1913.netlify.com/.netlify/functions/index/conductores",
+            function(data){
+                document.getElementById("posts-content").innerHTML=data.toString();
+                var max=0;
+                var className = document.querySelectorAll('.date-month');
+                
+                function monthDate(param) {
+                    let dateValue  = Date.parse(param)/1000;
+                    return -(dateValue-max);
+                }
+
+                for(let i = 0; i < className.length; i++) {
+                    var attributeaux = document.querySelectorAll('.date-month')[i].innerText;
+                    attributeaux = attributeaux.substring(3, 5)+"-"+attributeaux.substring(0, 2)+"-"+attributeaux.substring(6, 10);
+                    let dateValueaux  = Date.parse(attributeaux)/1000;
+                    if(dateValueaux>max) max=dateValueaux;
+                }
+
+                for(let i = 0; i < className.length; i++) {
+                    var attribute = document.querySelectorAll('.date-month')[i].innerText;
+                    attribute = attribute.substring(3, 5)+"-"+attribute.substring(0, 2)+"-"+attribute.substring(6, 10);
+                    document.querySelectorAll('.date-month')[i].setAttribute('data-timestamp', monthDate(attribute));
+                }
+
+                var options = {
+                    valueNames: [ 'origin', 'destination', 'pname' ]
+                };
+                
+                var options2 = {
+                    valueNames: [ { name: 'date-month', attr: 'data-timestamp' } ]
+                };
+
+                var posts = new List('users', options);
+                var posts2 = new List('users', options2);
+                var posts3 = new List('users2', options);
+                var posts4 = new List('users2', options2);
+
+                $(".filter").keyup(function(){
+                    posts.filter(item => {
+                    return options.valueNames.every(name => {
+                        var value = $("#"+name).val().toLowerCase();
+                        return item.values()[name].toLowerCase().includes(value)
+                        });
+                    });
+                    posts3.filter(item => {
+                    return options.valueNames.every(name => {
+                        var value = $("#"+name).val().toLowerCase();
+                        return item.values()[name].toLowerCase().includes(value)
+                        });
+                    });
+                    
+                    
+                });
+            });
+
+            $.get("https://zealous-snyder-fe1913.netlify.com/.netlify/functions/index/pasajeros",
+            function(data){
+                document.getElementById("users-content").innerHTML=data.toString();
+                var max=0;
+                var className = document.querySelectorAll('.date-month');
+                function monthDate(param) {
+                    let dateValue  = Date.parse(param)/1000;
+                    return -(dateValue-max);
+                }
+
+                for(let i = 0; i < className.length; i++) {
+                    var attributeaux = document.querySelectorAll('.date-month')[i].innerText;
+                    attributeaux = attributeaux.substring(3, 5)+"-"+attributeaux.substring(0, 2)+"-"+attributeaux.substring(6, 10);
+                    let dateValueaux  = Date.parse(attributeaux)/1000;
+                    if(dateValueaux>max) max=dateValueaux;
+                }
+
+                for(let i = 0; i < className.length; i++) {
+                    var attribute = document.querySelectorAll('.date-month')[i].innerText;
+                    attribute = attribute.substring(3, 5)+"-"+attribute.substring(0, 2)+"-"+attribute.substring(6, 10);
+                    document.querySelectorAll('.date-month')[i].setAttribute('data-timestamp', monthDate(attribute));
+                }
+
+                var options = {
+                    valueNames: [ 'origin', 'destination', 'pname' ]
+                };
+                
+                var options2 = {
+                    valueNames: [ { name: 'date-month', attr: 'data-timestamp' } ]
+                };
+
+                var posts = new List('users', options);
+                var posts2 = new List('users', options2);
+                var posts3 = new List('users2', options);
+                var posts4 = new List('users2', options2);
+                
+
+                $(".filter").keyup(function(){
+                    posts.filter(item => {
+                    return options.valueNames.every(name => {
+                        var value = $("#"+name).val().toLowerCase();
+                        return item.values()[name].toLowerCase().includes(value)
+                    });
+                    });
+                    posts3.filter(item => {
+                    return options.valueNames.every(name => {
+                        var value = $("#"+name).val().toLowerCase();
+                        return item.values()[name].toLowerCase().includes(value)
+                    });
+                    });
+                    
+                    
+                });
+                setTimeout(function () {
+                    $("i.fa-refresh").toggleClass("fa-spin");
+                }, 1200);
+            });
+
+        }
+        function getVias(){
+            $.get("https://zealous-snyder-fe1913.netlify.com/.netlify/functions/index/vias",
+            function(data){
+                document.getElementById('tableVias').innerHTML=data.split('*').join('<').split('$').join('>');
+                var options3 = {
+                    valueNames: [ 'name' ]
+                };  
+                var userList = new List('tablelist', options3);
+
+            });
+        }
+        getVias();
+            
+        /*(function(){
+            refresh()
+            setTimeout(arguments.callee, 15000);
+        })();*/
+    </script>
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+          loop: true,
+          autoplay: {
+             delay: 2500,
+             disableOnInteraction: true,
+             },
+      
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination'
+          }
+        });
+        </script>
+    <!-- Google schema markup -->
+    <script type="aplication/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Store",
+            "image": "https://acola.me/images/logo-01.png",
+            "name": "acola.me",
+            "email": "info@acola.me",
+            "telephone": "(+593) 998-775-709",
+            "url": "Https://acola.me"
+        }
+    </script>
+</body>
+</html>

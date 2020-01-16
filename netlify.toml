@@ -1,0 +1,41 @@
+[[redirects]]
+from = "/"
+to = "/index.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/.netlify/functions/index"
+to = "/index.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/index"
+to = "/index.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/contact"
+to = "/contact.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/.netlify/functions/index/contact"
+to = "/contact.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/acercade"
+to = "/acercade.html"
+status = 301
+force = true
+
+[[redirects]]
+from = "/.netlify/functions/index/acercade"
+to = "/acercade.html"
+status = 301
+force = true
