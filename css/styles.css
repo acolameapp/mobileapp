@@ -2735,3 +2735,7 @@ textarea.input {
     height: 100%;
 }
 /*agrego por andrés*/
+
+.main-hero {
+    height: 100vh !important;
+}
